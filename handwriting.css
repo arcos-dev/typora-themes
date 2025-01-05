@@ -1,0 +1,486 @@
+:root {
+  --paper-color: #f6f6f6;
+  --paper-line: #ccc; /* #94acd4; */
+  --side-bar-bg-color: #f6f6f6;
+  --window-border: none;
+  --search-select-bg-color: #575c61;
+  --active-file-bg-color: #f1f4f5;
+  --item-hover-bg-color: #f1f4f5;
+  --item-hover-text-color: black;
+  --control-text-color: #555;
+  --sequence-theme: hand;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Titillium Web", "serif";
+}
+
+#write {
+  margin-top: 18px;
+  max-width: 960px;
+  min-height: 600px;
+  position: relative;
+  padding: 11px 64px;
+  font-family: "Shadows Into Two Light", cursive;
+  font-size: 20px;
+  line-height: 32px;
+  color: #484848;
+  outline: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: #fafafa;
+  filter: contrast(98%) brightness(98%); /* Ajuste para simular a textura do grafite */
+  letter-spacing: 1.1px;
+}
+
+#write:before,
+#write:after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+#write:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-1.4deg);
+}
+
+#write:after {
+  background: repeating-linear-gradient(
+    var(--paper-color),
+    var(--paper-color) 31px,
+    var(--paper-line) 31px,
+    var(--paper-line) 32px
+  );
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  right: -3px;
+  top: 5px;
+}
+
+.file-list-item-summary {
+  height: 36px;
+}
+
+.file-list-item {
+  padding-top: 18px !important;
+  padding-bottom: 18px;
+}
+
+#sidebar-loading-template.file-list-item {
+  padding-top: 0 !important;
+}
+
+#write a,
+a:visited {
+  color: #a00;
+}
+
+#write
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  line-height: 32px;
+}
+
+#write h1 {
+  margin-top: 6px;
+  margin-bottom: 25px;
+  font-size: 2.1em;
+  line-height: 64px;
+}
+
+#write h1 mark {
+  color: #d72638;
+}
+
+#write h1 {
+  text-align: center;
+}
+
+#write h2 {
+  margin-top: -6px;
+  margin-bottom: 6px;
+  font-size: 1.6em;
+}
+
+#write h2 mark {
+  color: #9400d3;
+}
+
+#write h3 {
+  margin-top: -3px;
+  margin-bottom: 3px;
+  font-size: 1.4em;
+}
+
+#write h3 mark {
+  color: #2b58de;
+}
+
+#write h4 {
+  margin-top: -2px;
+  margin-bottom: 2px;
+  font-size: 1.3em;
+}
+
+#write h4 mark {
+  color: #228b22;
+}
+
+#write h5 {
+  margin-top: -3px;
+  margin-bottom: 3px;
+  font-size: 1.1em;
+}
+
+#write h5 mark {
+  color: #ff007f;
+}
+
+#write h6 {
+  margin-top: -4px;
+  margin-bottom: 4px;
+  font-size: 1.0em;
+}
+
+#write h6 mark {
+  color: #228b22;
+}
+
+#write p {
+  text-align: justify;
+  line-height: 32px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#write ul li:nth-child(n+1) {
+  margin-top: -16px;
+  margin-bottom: 16px;
+}
+
+#write ol, ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 32px;
+}
+
+#write ul {
+  list-style: none;
+  padding-left: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+#write li {
+  padding-left: 16px;
+}
+
+/* Remove margens desnecessárias no último elemento de um item de lista */
+#write ol li > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Ajusta as margens entre os itens de lista */
+#write ol li {
+  margin-bottom: -32px;
+}
+
+/* Remover margem desnecessária antes do último item */
+#write ul li > ul:last-child {
+  margin-bottom: 0;
+}
+
+#write ul li::before {
+  font-size: 24px;
+  content: '•';
+  color: #555;
+  position: absolute;
+  top: -3px;
+  left: 0;
+}
+
+/* Estilização do separador (<hr>) */
+#write hr {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: none;
+  height: 0; /* Evita altura adicional */
+}
+
+#write code {
+  margin-top: 0;
+  margin-bottom: -3px;
+  display: inline-block;
+}
+
+pre,
+code {
+/*font-family: "Fira Code", monospace;
+  font-size: 16px;
+  line-height: 1.6;*/
+  font-family: "Shadows Into Two Light", cursive;
+  font-size: 16px !important;
+  line-height: 32px;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 32px;
+}
+
+pre {
+  margin: 0px;
+}
+
+.sequence-theme {
+  background: black !important;
+  display: flex;
+  justify-content: center;
+}
+
+.footnotes {
+  display: list-item;
+  margin-left: 1em;
+}
+
+.md-fences {
+  border: 1px solid;
+  color: #333;
+}
+
+.md-fences.md-fences-with-lineno {
+  border: none;
+}
+
+.CodeMirror-linenumber {
+  color: #333;
+}
+
+*.in-text-selection,
+::selection,
+.CodeMirror-selected {
+  color: var(--search-select-text-color) !important;
+  text-shadow: none;
+}
+
+a.md-toc-inner {
+  color: var(--text-color);
+}
+
+.cm-s-typora-default .cm-link {
+  color: #a00;
+  text-decoration: underline;
+}
+
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+  color: black;
+}
+
+#typora-source .CodeMirror-lines {
+  max-width: 960px;
+  -webkit-font-smoothing: antialiased;
+}
+
+#typora-source code, #typora-source pre {
+  -webkit-font-smoothing: antialiased;
+  --monospace: monospace; /* for code blocks and inline code inside source code mode */
+}
+
+.md-def-name:before,
+.md-def-name:after {
+  color: #2d2d2d;
+}
+
+sup.md-footnote {
+  color: inherit;
+}
+
+mark {
+  background: none;
+}
+
+#write table {
+  margin-top: 2px;
+  margin-bottom: 13px;
+}
+
+#write table tr[cid]:first-child > td {
+  border-top: 2px double;
+}
+
+#write table tr[cid]:last-child > td {
+  border-bottom: 1px solid;
+}
+
+#write th {
+  border-color: #595959;
+  color: #595959;
+}
+
+#write td,
+#write th {
+  padding-top: 5px;
+  padding-bottom: 1px;
+  padding-left: 1ch;
+  padding-right: 1ch;
+  font-size: 18px;
+  line-height: 25px;
+  border: 1px solid;
+}
+
+pre.md-meta-block {
+  padding: 4px;
+  margin-bottom: 1em;
+}
+
+.task-list-item input:before {
+  content: "\221A";
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.6rem;
+  vertical-align: middle;
+  text-align: center;
+  background-color: inherit;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before {
+  color: inherit;
+}
+
+.md-task-list-item > input {
+  top: auto;
+  margin-left: -1.1em;
+  font-size: 1.3em;
+  margin-top: 0px;
+  -webkit-appearance: none;
+}
+
+.md-task-list-item input:before {
+  content: "\2610";
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.6rem;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.md-task-list-item input:checked:before,
+.md-task-list-item input[checked]:before {
+  color: inherit;
+  content: "\2611";
+}
+
+.task-list-item {
+  padding-left: 1.5em;
+}
+
+#write > blockquote {
+  position: relative;
+  padding: 0 18px;
+  margin-left: -18px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: calc(100% - 18px);
+  font-style: italic;
+}
+
+#write > blockquote::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%; /* Altura total do blockquote */
+  width: 2px; /* Espessura da linha */
+  background: #595959;
+  transform: rotate(2deg);
+  border-radius: 1px; /* Bordas levemente arredondadas */
+}
+
+#write > blockquote::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%; /* Altura total do blockquote */
+  width: 3px; /* Espessura da linha */
+  background: linear-gradient(to bottom, rgba(89, 89, 89, 0), #484848 5%, #484848 95%, rgba(89, 89, 89, 0)); /* Gradiente para simular as pontas mais finas */
+  transform: rotate(2deg); /* Mantém a mesma rotação */
+}
+
+#write > .md-fences-with-lineno {
+  margin-left: -33px;
+}
+
+.CodeMirror-linenumber {
+  min-width: 25px;
+}
+
+.md-header {
+  font-size: inherit !important;
+}
+
+.symbol {
+  font-family: 'Wingdings';
+  font-size: 24px;       /* Ajuste o tamanho conforme necessário */
+  color: #ff0000;        /* Vermelho */
+  letter-spacing: 2px;   /* Espaçamento entre caracteres */
+  line-height: 30px;     /* Espaçamento entre linhas */
+  padding: 5px;          /* Espaçamento interno */
+}
+
+@media print {
+  body, html {
+    background: none !important;
+    color: #333 !important;
+    box-shadow: none !important;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  h6 {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  #write,
+  #write:before,
+  #write:after {
+    margin: 0;
+    padding: 0;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
